@@ -12,6 +12,8 @@ public class Line {
 
     public Line(String rawline1, String rawline2, String rawline3) {
         assert(rawline1.length()%Digit.WIDTH==0);
+        assert(rawline2.length()%Digit.WIDTH==0);
+        assert(rawline3.length()%Digit.WIDTH==0);
 
         String[] parts1 = rawline1.split("(?<=\\G.{"+Digit.WIDTH+"})");
         String[] parts2 = rawline2.split("(?<=\\G.{"+Digit.WIDTH+"})");

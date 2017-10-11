@@ -14,68 +14,67 @@ public class Digit {
     String line3;
 
 
-
     public int toInteger() {
         if (
-                line1 == "   " &&
-                        line2 == "  |" &&
-                        line3 == "  |") {
+                line1.equals("   ") &&
+                        line2.equals("  |") &&
+                        line3.equals("  |")) {
             return 1;
         }
 
         if (
-                line1 == " _ " &&
-                        line2 == " _|" &&
-                        line3 == "|_ ") {
+                line1.equals(" _ ") &&
+                        line2.equals(" _|") &&
+                        line3.equals("|_ ")) {
             return 2;
         }
 
         if (
-                line1 == " _ " &&
-                        line2 == " _|" &&
-                        line3 == " _|") {
+                line1.equals(" _ ") &&
+                        line2.equals(" _|") &&
+                        line3.equals(" _|")) {
             return 3;
         }
 
         if (
-                line1 == "   " &&
-                        line2 == "|_|" &&
-                        line3 == "  |") {
+                line1.equals("   ") &&
+                        line2.equals("|_|") &&
+                        line3.equals("  |")) {
             return 4;
         }
 
         if (
-                line1 == " _ " &&
-                        line2 == "|_ " &&
-                        line3 == " _|") {
+                line1.equals(" _ ") &&
+                        line2.equals("|_ ") &&
+                        line3.equals(" _|")) {
             return 5;
         }
 
         if (
-                line1 == " _ " &&
-                        line2 == "|_ " &&
-                        line3 == "|_|") {
+                line1.equals(" _ ") &&
+                        line2.equals("|_ ") &&
+                        line3.equals("|_|")) {
             return 6;
         }
 
         if (
-                line1 == " _ " &&
-                        line2 == "  |" &&
-                        line3 == "  |") {
+                line1.equals(" _ ") &&
+                        line2.equals("  |") &&
+                        line3.equals("  |")) {
             return 7;
         }
 
         if (
-                line1 == " _ " &&
-                        line2 == "|_|" &&
-                        line3 == "|_|") {
+                line1.equals(" _ ") &&
+                        line2.equals("|_|") &&
+                        line3.equals("|_|")) {
             return 8;
         }
 
         if (
-                line1 == " _ " &&
-                        line2 == "|_|" &&
-                        line3 == " _|") {
+                line1.equals(" _ ") &&
+                        line2.equals("|_|") &&
+                        line3.equals(" _|")) {
             return 9;
         }
 

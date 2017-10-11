@@ -15,6 +15,7 @@ public class Main {
                         "|_||_|| || ||_   |  |  ||_ \n" +
                         "  | _||_||_||_|  |  |  | _|";
 
+        System.out.println(a);
         List<Line> lines = DigitLinesReader.parseString(a);
 
         for (Line line:lines) {
