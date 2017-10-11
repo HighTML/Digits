@@ -3,6 +3,7 @@ package com.hightml.digits;
 import lombok.Data;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Data
@@ -15,6 +16,8 @@ public class Line {
         String[] parts1 = rawline1.split("(?<=\\G.{"+Digit.WIDTH+"})");
         String[] parts2 = rawline2.split("(?<=\\G.{"+Digit.WIDTH+"})");
         String[] parts3 = rawline3.split("(?<=\\G.{"+Digit.WIDTH+"})");
+
+
 
         for (int i=0; i<parts1.length; i++) {
             digits.add(new Digit(parts1[i], parts2[i], parts3[i]));

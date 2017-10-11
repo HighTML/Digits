@@ -13,6 +13,8 @@ public class Digit {
     String line2;
     String line3;
 
+
+
     public int toInteger() {
         if (
                 line1 == "   " &&

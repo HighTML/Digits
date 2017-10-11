@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
         String a =
-                        "    _  _     _  _  _  _  _\n" +
+                        "    _  _     _  _  _  _  _ \n" +
                         "  | _| _||_||_ |_   ||_||_|\n" +
                         "  ||_  _|  | _||_|  ||_| _|\n" +
                         "    _  _  _  _  _  _     _ \n" +
