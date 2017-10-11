@@ -20,7 +20,7 @@ public class Main {
 
         for (Line line:lines) {
             List<Digit> digits = line.getDigits();
-            System.out.println(digits.stream().map(Object::toString).collect(Collectors.joining(",")));
+            System.out.println(digits.stream().map(Object::toString).collect(Collectors.joining("")));
         }
 
 
