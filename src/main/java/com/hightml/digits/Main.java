@@ -15,7 +15,7 @@ public class Main {
                         "  | _||_||_||_|  |  |  | _|\n";
 
         System.out.println(a);
-        List<Line> lines = DigitLinesReader.parseString(a);
+        List<Line> lines = Reader.parseString(a);
 
 
         // Digits printen als geparsde characters:

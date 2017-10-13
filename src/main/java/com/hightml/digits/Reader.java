@@ -3,7 +3,7 @@ package com.hightml.digits;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DigitLinesReader {
+public class Reader {
     public static List<Line> parseString(String a) {
         String[] rawlines = a.split("\n");
         assert (rawlines.length % Digit.HEIGHT == 0);
