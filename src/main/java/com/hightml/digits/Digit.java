@@ -7,7 +7,7 @@ import lombok.Data;
 @AllArgsConstructor
 public class Digit {
     public static final int HEIGHT = 3;
-    public static final int WIDTH = 3;
+    public static final int WIDTH = HEIGHT;
 
     String line1;
     String line2;

@@ -1,8 +1,7 @@
 package com.hightml.digits;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 public class Main {
 
@@ -13,17 +12,20 @@ public class Main {
                         "  ||_  _|  | _||_|  ||_| _|\n" +
                         "    _  _  _  _  _  _     _ \n" +
                         "|_||_|| || ||_   |  |  ||_ \n" +
-                        "  | _||_||_||_|  |  |  | _|";
+                        "  | _||_||_||_|  |  |  | _|\n";
 
         System.out.println(a);
         List<Line> lines = DigitLinesReader.parseString(a);
 
-        for (Line line:lines) {
+
+        // Digits printen als geparsde characters:
+        for (Line line : lines) {
             List<Digit> digits = line.getDigits();
-            System.out.println(digits.stream().map(Object::toString).collect(Collectors.joining("")));
+            for (Digit digit : digits) {
+                System.out.print(digit.toString());
+            }
+            System.out.println();
         }
-
-
 
 
     }

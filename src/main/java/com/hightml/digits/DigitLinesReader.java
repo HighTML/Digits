@@ -9,7 +9,7 @@ public class DigitLinesReader {
         assert (rawlines.length % Digit.HEIGHT == 0);
 
         List<Line> lines = new ArrayList<Line>();
-        for (int i = 0; i<rawlines.length; i+=3) {
+        for (int i = 0; i<rawlines.length; i+=Digit.HEIGHT) {
             lines.add(new Line(rawlines[i], rawlines[i+1], rawlines[i+2]));
         }
         return lines;
