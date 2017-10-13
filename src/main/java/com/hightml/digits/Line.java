@@ -2,6 +2,7 @@ package com.hightml.digits;
 
 import lombok.Data;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,19 +10,29 @@ import java.util.List;
 public class Line {
     List<Digit> digits = new ArrayList<Digit>();
 
-    public Line(String rawline1, String rawline2, String rawline3) {
-        assert(rawline1.length()%Digit.WIDTH==0);
-        assert(rawline2.length()%Digit.WIDTH==0);
-        assert(rawline3.length()%Digit.WIDTH==0);
+    public Line(Font font, List<String> rawline) throws FontFormatException {
+        List<String[]> digitParts = new ArrayList<>();
 
-        String[] parts1 = rawline1.split("(?<=\\G.{"+Digit.WIDTH+"})");
-        String[] parts2 = rawline2.split("(?<=\\G.{"+Digit.WIDTH+"})");
-        String[] parts3 = rawline3.split("(?<=\\G.{"+Digit.WIDTH+"})");
+        rawline.stream().forEach(r -> digitParts.add(r.split("(?<=\\G.{" + font.getWidth() + "})")));
 
-
-
-        for (int i=0; i<parts1.length; i++) {
-            digits.add(new Digit(parts1[i], parts2[i], parts3[i]));
+        int nrDigitsInLine = digitParts.get(0).length;
+        for (int xDigitInLine = 0; xDigitInLine < nrDigitsInLine; xDigitInLine++) {
+            List<String> digitPixels = new ArrayList<>();
+            for (int yPixelRow = 0; yPixelRow < font.getHeight(); yPixelRow++) {
+                digitPixels.add(digitParts.get(yPixelRow)[xDigitInLine]);
+            }
+            digits.add(new Digit(font, digitPixels));
         }
+    }
+
+    public String toFontString(final Font font) {
+        StringBuilder sb = new StringBuilder();
+        for (int y = 0; y < font.getHeight(); y++) {
+            for (Digit d : digits) {
+                sb.append(font.getFontCharacter(d.getCharacter()).get(y));
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 }
