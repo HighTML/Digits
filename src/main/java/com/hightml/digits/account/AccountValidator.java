@@ -28,14 +28,13 @@ public class AccountValidator implements ConstraintValidator<ValidAccount, Accou
         if (account == null) {
             return false;
         }
-        long number = account.getNumber();
-        long sum = number % 10;
-
-        for (int multiplier = 2; number > 0; multiplier++) {
-            long val = (number /= 10) % 10;
-            sum += multiplier * val;
+        char[] chars = String.valueOf(account.getNumber()).toCharArray();
+        int sum = 0;
+        for(int i = 1; i <= chars.length; i++) {
+            int value = Character.digit(chars[chars.length-i], 10);
+            sum += value * i;
         }
-        return sum != 0 && sum % 11 == 0;
+        return (sum % 11) == 0;
     }
 
 }
