@@ -1,5 +1,7 @@
 package com.hightml.digits;
 
+import com.hightml.digits.scan.*;
+
 import java.awt.*;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,7 +18,7 @@ public class Main {
                 "  | _||_||_||_|  |  |  | _|\n";
 
         System.out.println(a);
-        Reader reader = new Reader(Font.SIMPLE);
+        Reader reader = new Reader(com.hightml.digits.scan.Font.SIMPLE);
         try {
             List<Line> lines = reader.parseString(a);
 
@@ -26,7 +28,7 @@ public class Main {
                 for (Digit digit : digits) {
                     System.out.print(digit.toString());
                 }
-                System.out.println();
+                System.out.println(" = "+line.toInteger());
             }
 
             // En nu in een one-liner:
@@ -34,7 +36,7 @@ public class Main {
 
 
             // Digits printen in een ander font:
-            lines.stream().forEach(l -> System.out.println(l.toFontString(Font.BANNER)));
+            lines.stream().forEach(l -> System.out.println(l.toFontString(com.hightml.digits.scan.Font.BANNER)));
 
 
         } catch (FontFormatException e) {

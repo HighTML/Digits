@@ -1,14 +1,19 @@
-package com.hightml.digits;
+package com.hightml.digits.scan;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
 import java.awt.*;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
 @Data
+@Slf4j
 public class Reader {
     private Font font;
 
@@ -23,5 +28,9 @@ public class Reader {
             lines.add(new Line(font, lineStrings));
         }
         return lines;
+    }
+
+    public List<Line> parseFile(Path path) throws FontFormatException, IOException {
+        return parseString(new String(Files.readAllBytes(path.toAbsolutePath())));
     }
 }

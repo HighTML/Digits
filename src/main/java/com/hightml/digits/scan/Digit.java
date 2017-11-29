@@ -1,4 +1,4 @@
-package com.hightml.digits;
+package com.hightml.digits.scan;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

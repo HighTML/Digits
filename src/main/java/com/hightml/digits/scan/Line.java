@@ -1,4 +1,4 @@
-package com.hightml.digits;
+package com.hightml.digits.scan;
 
 import lombok.Data;
 
@@ -34,5 +34,13 @@ public class Line {
             sb.append("\n");
         }
         return sb.toString();
+    }
+
+    public int toInteger() {
+        StringBuilder sb = new StringBuilder();
+        for (Digit digit : digits) {
+            sb.append(digit.toString());
+        }
+        return Integer.valueOf(sb.toString());
     }
 }
